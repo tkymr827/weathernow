@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/tenki',
+  // publicPath: '/tenki',
   outputDir: 'docs',
   filenameHashing: false,
   productionSourceMap: false

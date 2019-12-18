@@ -55,13 +55,26 @@ export default {
 </script>
 <style lang="scss">
 #app{
+    h1{
+    @media screen and (max-width:480px){
+        font-size:6rem;
+        margin-top:-10rem;
+    }
+    }
     nav{
+        // display:flex;
+        // flex-direction: column;
         ul{
             background:#000;
             display: flex;
-            // justify-content: center;
+            justify-content: space-around;
             list-style: none;
             height:10vh;
+            @media screen and (max-width:480px){
+                height:20vh;
+                flex-wrap: wrap;
+                width:auto;
+            }
             li{
                 }
                 a{
@@ -70,6 +83,10 @@ export default {
                     font-size:4rem;
                     padding:3rem 4rem;
                     line-height:10vh;
+                    @media screen and(max-width:480px){
+                        font-size:2rem;
+                        padding:2rem 4rem;
+                    }
                 }
                 .router-link-active{
                     border-bottom:#fff .2rem solid;
