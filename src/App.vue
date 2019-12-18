@@ -47,27 +47,6 @@ export default {
         this.tenki = response.data.weather[0].main
         this.place = response.data.name
         this.temperature = Math.round(response.data.main.temp) - 273
-
-        switch (this.tenki) {
-          case 'Clear':
-            this.img = require('./assets/imgs/sunny.jpg')
-            break
-          case 'Clouds':
-            this.img = require('./assets/imgs/cloudy.jpg')
-            break
-          case 'Rain':
-            this.img = require('./assets/imgs/rainy.jpg')
-            break
-          case 'Mist':
-            this.img = require('./assets/imgs/mist.jpg')
-            break
-          case 'Snow':
-            this.img = require('./assets/imgs/snowy.jpg')
-            break
-          case 'Thunderstorm':
-            this.img = require('./assets/imgs/thunderstorm.jpg')
-            break
-        }
       })
   }
 
