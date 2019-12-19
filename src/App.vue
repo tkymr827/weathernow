@@ -8,17 +8,19 @@
           <li><router-link to="/riodejaneiro">RIO DE JANEIRO</router-link></li>
           </ul>
         <router-view></router-view>
+        <!-- <h1>{{newyorktime}}</h1> -->
       </nav>
       <!-- <tokyo/>
       <newyork/>
       <australia/>
       <mexico/>
       <test/> -->
+
+      <!-- <div class="timer">{{hour}}:{{min}}:{{sec}}</div> -->
   </div>
 </template>
 
 <script>
-import axios from 'axios'
 // import tokyo from './components/tokyo.vue'
 // import newyork from './components/newyork.vue'
 // // import australia from './components/australia.vue'
@@ -35,27 +37,46 @@ export default {
 //   },
   data () {
     return {
-      place: '',
-      tenki: '',
-      temperature: '',
-      img: ''
+      hour: 0,
+      min: 0,
+      sec: 0,
+      newyorktime: 0
     }
   },
   created () {
-    axios.get('https://api.openweathermap.org/data/2.5/weather?q=Tokyo,jp&APPID=367ebe7f5381fe5d715ffedc8e4a8262')
-      .then(response => {
-        this.tenki = response.data.weather[0].main
-        this.place = response.data.name
-        this.temperature = Math.round(response.data.main.temp) - 273
-      })
-  }
+    setInterval(() => {
+      let time = new Date()
+      this.hour = time.getHours()
+      this.min = time.getMinutes()
+      this.sec = time.getSeconds()
 
+      this.newyorktime = new Date()
+
+      if (this.hour < 10) {
+        this.hour = '0' + this.hour
+      }
+      if (this.min < 10) {
+        this.min = '0' + this.min
+      }
+
+      if (this.sec < 10) {
+        this.sec = '0' + this.sec
+      }
+    }, 1000)
+  }
 }
 
 </script>
 <style lang="scss">
 #app{
+    .timer{
+        font-size:10rem;
+    }
     h1{
+        color:#bd8888;
+        -webkit-text-stroke: #000 thin;
+        font-size:8rem;
+        margin-top:-2rem;
     @media screen and (max-width:480px){
         font-size:6rem;
         margin-top:-10rem;
@@ -70,11 +91,16 @@ export default {
             justify-content: space-around;
             list-style: none;
             height:10vh;
-            @media screen and (max-width:480px){
+            @media screen and (max-width:1170px){
                 height:20vh;
                 flex-wrap: wrap;
                 width:auto;
             }
+            // @media screen and (max-width:480px){
+            //     height:20vh;
+            //     flex-wrap: wrap;
+            //     width:auto;
+            // }
             li{
                 }
                 a{
@@ -96,7 +122,7 @@ export default {
         }
         .place,.tenki,.temperature,.humidity{
             margin:2rem auto;
-            font-size:6.5rem;
+            font-size:8.5rem;
             -webkit-text-stroke: #000 thin;
             color:#fff;
             @media screen and (max-width:480px){

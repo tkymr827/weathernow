@@ -1,6 +1,6 @@
 <template>
   <div class="main" :style="{'background': 'url('+ img + ')center /cover no-repeat'}">
-    <h1>Weather now</h1>
+    <h1>{{hour}}:{{min}}:{{sec}}</h1>
     <div class="contents">
         <div class="place">{{place}}</div>
         <div class="tenki">{{tenki}}</div>
@@ -13,16 +13,41 @@
 <script>
 import axios from 'axios'
 export default {
+//   props: {
+//     hour: Number,
+//     min: Number,
+//     sec: Number
+//   },
   data () {
     return {
       place: '',
       tenki: '',
       temperature: '',
       humidity: '',
-      img: ''
+      img: '',
+      hour: '',
+      min: '',
+      sec: ''
     }
   },
   created () {
+    setInterval(() => {
+      let time = new Date()
+      this.hour = time.getHours()
+      this.min = time.getMinutes()
+      this.sec = time.getSeconds()
+
+      if (this.hour < 10) {
+        this.hour = '0' + this.hour
+      }
+      if (this.min < 10) {
+        this.min = '0' + this.min
+      }
+
+      if (this.sec < 10) {
+        this.sec = '0' + this.sec
+      }
+    }, 1000)
     axios.get('https://api.openweathermap.org/data/2.5/weather?q=hokkaidō,jp&APPID=367ebe7f5381fe5d715ffedc8e4a8262')
       .then(response => {
         this.tenki = response.data.weather[0].main
