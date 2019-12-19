@@ -101,6 +101,7 @@ export default {
             //     flex-wrap: wrap;
             //     width:auto;
             // }
+
             li{
                 }
                 a{
@@ -111,7 +112,7 @@ export default {
                     line-height:10vh;
                     @media screen and(max-width:480px){
                         font-size:2rem;
-                        padding:2rem 4rem;
+                        padding:1rem 3rem;
                     }
                 }
                 .router-link-active{
