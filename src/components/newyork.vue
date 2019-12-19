@@ -29,23 +29,23 @@ export default {
 
         switch (this.tenki) {
           case 'Clear':
-            this.img = require('../assets/imgs/sunny.jpg')
+            this.img = require('../assets/img/sunny.jpg')
             break
           case 'Clouds':
-            // this.img = require('./assets/imgs/cloudy.jpg')
-            this.img = require('../assets/imgs/cloudy.jpg')
+            // this.img = require('./assets/img/cloudy.jpg')
+            this.img = require('../assets/img/cloudy.jpg')
             break
           case 'Rain':
-            this.img = require('../assets/imgs/rainy.jpg')
+            this.img = require('../assets/img/rainy.jpg')
             break
           case 'Mist':
-            this.img = require('../assets/imgs/mist.jpg')
+            this.img = require('../assets/img/mist.jpg')
             break
           case 'Snow':
-            this.img = require('../assets/imgs/snowy.jpg')
+            this.img = require('../assets/img/snowy.jpg')
             break
           case 'Thunderstorm':
-            this.img = require('../assets/imgs/thunderstorm.jpg')
+            this.img = require('../assets/img/thunderstorm.jpg')
             break
         }
       })
