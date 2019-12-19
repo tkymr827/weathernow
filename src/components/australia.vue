@@ -1,10 +1,12 @@
 <template>
-  <div class="tokyo" :style="{'background': 'url('+ img + ')center /cover no-repeat'}">
+  <div class="main" :style="{'background': 'url('+ img + ')center /cover no-repeat'}">
     <h1>Weather now</h1>
     <div class="contents">
         <div class="place">{{place}}</div>
         <div class="tenki">{{tenki}}</div>
         <div class="temperature">{{temperature}}℃</div>
+        <div class="humidity">湿度:{{humidity}}%</div>
+
     </div>
   </div>
 </template>
@@ -17,6 +19,7 @@ export default {
       place: '',
       tenki: '',
       temperature: '',
+      humidity: '',
       img: ''
     }
   },
@@ -25,6 +28,7 @@ export default {
       .then(response => {
         this.tenki = response.data.weather[0].main
         this.place = response.data.name
+        this.humidity = response.data.main.humidity
         this.temperature = Math.round(response.data.main.temp) - 273
 
         switch (this.tenki) {
@@ -66,7 +70,7 @@ html{
     font-family: 'Courier Prime', monospace;
 
 }
-.tokyo {
+.main {
     display:flex;
     justify-content: center;
     align-items: center;

@@ -1,10 +1,11 @@
 <template>
-  <div class="tokyo" :style="{'background': 'url('+ img + ')center /cover no-repeat'}">
+  <div class="main" :style="{'background': 'url('+ img + ')center /cover no-repeat'}">
     <h1>Weather now</h1>
     <div class="contents">
         <div class="place">{{place}}</div>
-        <div class="tenki">{{tenki}}</div>
-        <div class="temperature">{{temperature}}℃</div>
+        <div class="tenki">天気:{{tenki}}</div>
+        <div class="temperature">温度:{{temperature}}℃</div>
+        <div class="humidity">湿度:{{humidity}}%</div>
     </div>
   </div>
 </template>
@@ -17,6 +18,7 @@ export default {
       place: '',
       tenki: '',
       temperature: '',
+      humidity: '',
       img: ''
     }
   },
@@ -24,6 +26,7 @@ export default {
     axios.get('https://api.openweathermap.org/data/2.5/weather?q=hokkaidō,jp&APPID=367ebe7f5381fe5d715ffedc8e4a8262')
       .then(response => {
         this.tenki = response.data.weather[0].main
+        this.humidity = response.data.main.humidity
         this.place = response.data.name
         this.temperature = Math.round(response.data.main.temp) - 273
 
@@ -66,7 +69,7 @@ html{
     font-family: 'Courier Prime', monospace;
 
 }
-.tokyo {
+.main {
     display:flex;
     justify-content: center;
     align-items: center;

@@ -3,9 +3,9 @@
       <nav>
           <ul>
           <li><router-link to="/tokyo">TOKYO</router-link></li>
+          <li><router-link to="/hokkaido"> HOKKAIDO</router-link></li>
           <li><router-link to="/newyork">NEW YORK</router-link></li>
-          <li><router-link to="/mexico">MEXICO</router-link></li>
-          <li><router-link to="/test"> HOKKAIDO</router-link></li>
+          <li><router-link to="/riodejaneiro">RIO DE JANEIRO</router-link></li>
           </ul>
         <router-view></router-view>
       </nav>
@@ -22,16 +22,16 @@ import axios from 'axios'
 // import tokyo from './components/tokyo.vue'
 // import newyork from './components/newyork.vue'
 // // import australia from './components/australia.vue'
-// import mexico from './components/mexico.vue'
-// import test from './components/test.vue'
+// import riodejaneiro from './components/riodejaneiro.vue'
+// import hokkaido from './components/hokkaido.vue'
 
 export default {
 //   components: {
 //     tokyo,
 //     newyork,
 //     // australia,
-//     mexico,
-//     test
+//     riodejaneiro,
+//     hokkaido
 //   },
   data () {
     return {
@@ -92,6 +92,15 @@ export default {
                     border-bottom:#fff .2rem solid;
                     padding-bottom:.4rem;
                 }
+            }
+        }
+        .place,.tenki,.temperature,.humidity{
+            margin:2rem auto;
+            font-size:9rem;
+            -webkit-text-stroke: #000 thin;
+            color:#fff;
+            @media screen and (max-width:480px){
+                font-size:5rem;
             }
         }
 

@@ -3,16 +3,16 @@ import VueRouter from 'vue-router'
 import tokyo from './components/tokyo.vue'
 import newyork from './components/newyork.vue'
 // import australia from './components/australia.vue'
-import mexico from './components/mexico.vue'
-import test from './components/test.vue'
+import riodejaneiro from './components/riodejaneiro.vue'
+import hokkaido from './components/hokkaido.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/tokyo', component: tokyo },
   { path: '/newyork', component: newyork },
-  { path: '/mexico', component: mexico },
-  { path: '/test', component: test }
+  { path: '/riodejaneiro', component: riodejaneiro },
+  { path: '/hokkaido', component: hokkaido }
 ]
 
 const router = new VueRouter({
