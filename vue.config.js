@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: 'weathernow/',
+  publicPath: '/weathernow/',
   assetsDir: './',
   outputDir: 'docs',
   filenameHashing: false,
