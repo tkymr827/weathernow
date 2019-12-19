@@ -3,9 +3,9 @@
     <h1>Weather now</h1>
     <div class="contents">
         <div class="place">{{place}}</div>
-        <div class="tenki">天気:{{tenki}}</div>
-        <div class="temperature">温度:{{temperature}}℃</div>
-        <div class="humidity">湿度:{{humidity}}%</div>
+        <div class="tenki">{{tenki}}</div>
+        <div class="temperature">{{temperature}}℃</div>
+        <div class="humidity">{{humidity}}%</div>
     </div>
   </div>
 </template>

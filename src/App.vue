@@ -96,7 +96,7 @@ export default {
         }
         .place,.tenki,.temperature,.humidity{
             margin:2rem auto;
-            font-size:9rem;
+            font-size:6.5rem;
             -webkit-text-stroke: #000 thin;
             color:#fff;
             @media screen and (max-width:480px){
