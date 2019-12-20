@@ -112,7 +112,10 @@ export default {
                     line-height:10vh;
                     @media screen and(max-width:480px){
                         font-size:2rem;
-                        padding:1rem 2rem;
+                        padding:1rem 3rem;
+                    }
+                    @media screen and(max-width:374px){
+                        padding:.5rem 1rem;
                     }
 
                 }
