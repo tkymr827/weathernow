@@ -91,7 +91,7 @@ export default {
             justify-content: space-around;
             list-style: none;
             height:10vh;
-            @media screen and (max-width:1170px){
+            @media screen and (max-width:663px){
                 height:20vh;
                 flex-wrap: wrap;
                 width:auto;
@@ -115,10 +115,14 @@ export default {
                         font-size:2rem;
                         padding:1rem 3rem;
                     }
-                    @media screen and(max-width:375px){
+                    @media screen and(max-width:480px){
                         font-size:1.5rem;
                         padding:.5rem 1rem;
                     }
+                    @media screen and(max-width:230px){
+                        font-size:.8rem;
+                    }
+
                 }
                 .router-link-active{
                     border-bottom:#fff .2rem solid;
