@@ -112,8 +112,9 @@ export default {
                     line-height:10vh;
                     @media screen and(max-width:480px){
                         font-size:2rem;
-                        padding:1rem 3rem;
+                        padding:1rem 2rem;
                     }
+
                 }
                 .router-link-active{
                     border-bottom:#fff .2rem solid;
