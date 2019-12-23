@@ -81,6 +81,7 @@ export default {
 <style lang="scss">
 #app{
     background:#eee;
+    background:url("./assets/img/wood.jpg")center center /cover no-repeat;
     min-height:100vh;
     .content{
         display:flex;
@@ -89,6 +90,8 @@ export default {
         flex-direction: column;
         p{
             font-size:3rem;
+            color:#fff;
+            -webkit-text-stroke: #000 thin;
         }
     }
     .timer{
