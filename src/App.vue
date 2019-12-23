@@ -2,14 +2,18 @@
   <div id="app">
       <nav>
           <ul>
-          <li><router-link to="/tokyo">TOKYO</router-link></li>
-          <li><router-link to="/hokkaido"> HOKKAIDO</router-link></li>
-          <li><router-link to="/newyork">NEW YORK</router-link></li>
-          <li><router-link to="/riodejaneiro">RIO DE JANEIRO</router-link></li>
+          <li @click="go"><router-link to="/tokyo">TOKYO</router-link></li>
+          <li @click="go"><router-link to="/hokkaido"> HOKKAIDO</router-link></li>
+          <li @click="go"><router-link to="/newyork">NEW YORK</router-link></li>
+          <li @clicl="go"><router-link to="/riodejaneiro">RIO DE JANEIRO</router-link></li>
           </ul>
         <router-view></router-view>
         <!-- <h1>{{newyorktime}}</h1> -->
       </nav>
+        <div class="content" v-if="this.saisyo===true">
+            <h1>Weather Now</h1>
+            <p>上の地名から見たい天気のところを選んでください</p>
+        </div>
       <!-- <tokyo/>
       <newyork/>
       <australia/>
@@ -40,7 +44,8 @@ export default {
       hour: 0,
       min: 0,
       sec: 0,
-      newyorktime: 0
+      newyorktime: 0,
+      saisyo: true
     }
   },
   created () {
@@ -63,12 +68,29 @@ export default {
         this.sec = '0' + this.sec
       }
     }, 1000)
+  },
+  methods: {
+    go: function () {
+      this.saisyo = false
+      console.log(this.saisyo)
+    }
   }
 }
 
 </script>
 <style lang="scss">
 #app{
+    background:#eee;
+    min-height:100vh;
+    .content{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        p{
+            font-size:3rem;
+        }
+    }
     .timer{
         font-size:10rem;
     }
