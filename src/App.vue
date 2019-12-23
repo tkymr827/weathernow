@@ -84,6 +84,7 @@ export default {
     background:url("./assets/img/wood.jpg")center center /cover no-repeat;
     min-height:100vh;
     .content{
+        margin-top:4rem;
         display:flex;
         justify-content: center;
         align-items: center;
@@ -98,7 +99,8 @@ export default {
         font-size:10rem;
     }
     h1{
-        color:#bd8888;
+        // color:#bd8888;
+        color:ivory;
         -webkit-text-stroke: #000 thin;
         font-size:8rem;
         margin-top:-2rem;
